@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #ff0000;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.nav-content {
+    display: flex;
+    list-style-type: none;
+    gap: 5px;
+}
+
+nav ul li {
+    display: inline;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 2px 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: black;
+    border-radius: 2px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 16px;
+    left: 0;
+    background-color: #380101;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.nav-content li:hover {
+    background-color: white;
+    color: #ff0000;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown li a:hover {
+    background-color: blue;
+}
+
+.donate-btn {
+    background-color:#380101;
+    color:white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Correspond à environ 75% de la hauteur de 1080px */
+}
+
+.carousel {
+    width: 1920px; /* Largeur correspondant à un écran standard */
+    height: 720px; /* Hauteur de l'élément .hero */
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 5760px; /* 1920px * 3 (car 3 images dans le carousel) */
+    height: 720px;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    width: 1920px; /* Chaque slide prend toute la largeur de l'écran */
+    height: 720px; /* Chaque slide prend toute la hauteur définie */
+    flex-shrink: 0;
+}
+
+img {
+    width: 1920px; /* Les images prennent toute la largeur du slide */
+    height: 720px; /* Les images prennent toute la hauteur du slide */
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 360px; /* La moitié de 720px pour centrer verticalement */
+    left: 960px; /* La moitié de 1920px pour centrer horizontalement */
+    transform: translate(-50%, -50%); /* Garde la transformation de centrage */
+    text-align: center;
+    color: white;
+    z-index: 1000;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    background-color: #e63946;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 19px;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-1920px); } /* Décalage d'une image */
+    66% { transform: translateX(-3840px); } /* Décalage de deux images */
+    100% { transform: translateX(0); } /* Retour à la première image */
+}
+
+.slides {
+    animation: slide 10s infinite;
+}
+
+.carousel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 720px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.action{
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.action h2{
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.action-card{
+    background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 20%;
+  display: inline-block;
+}
+
+img{
+    width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  height: 50%;
+
+}
+
+.action-card h3{
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.action-card p{
+    font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn{
+    padding: 10px 20px;
+  background-color: #e63946;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
